@@ -206,16 +206,6 @@ AgenciaDeViajes/
 
 ---
 
-## 📚 Documentación Complementaria
-
-- [Arquitectura Técnica](ARQUITECTURA.md)
-- [Modelo de Datos (Firebase)](MODELO_DATOS.md)
-- [Roles y Permisos](ROLES_PERMISOS.md)
-- [Guía de Instalación](GUIA_INSTALACION.md)
-- [Flujos de Procesos](FLUJO_PROCESOS.md)
-- [API y Endpoints](API_ENDPOINTS.md)
-
----
 
 ## 🔮 Líneas Futuras
 
