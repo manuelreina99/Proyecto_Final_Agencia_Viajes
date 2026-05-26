@@ -224,7 +224,7 @@ El Sistema de Agencia de Viajes proporciona una solución integral y moderna par
 
 **Empresa:** Viajes Globales  
 **Versión:** 1.0  
-**Estado:** En desarrollo  
+**Estado:** Finalizado  
 
 ---
 
