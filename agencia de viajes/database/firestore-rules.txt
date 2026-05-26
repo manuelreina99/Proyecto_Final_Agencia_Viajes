@@ -1,0 +1,55 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function userDoc() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid));
+    }
+
+    function userRole() {
+      return userDoc().data.rol;
+    }
+
+    match /users/{userId} {
+      allow read: if isAuthenticated() && (request.auth.uid == userId || userRole() == "admin");
+      allow create: if isAuthenticated() && request.auth.uid == userId;
+      allow update: if isAuthenticated() && (request.auth.uid == userId || userRole() == "admin");
+      allow delete: if isAuthenticated() && userRole() == "admin";
+    }
+
+    match /reservas/{reservaId} {
+      allow read: if isAuthenticated() && (
+        userRole() == "admin" ||
+        request.auth.uid == resource.data.clienteId ||
+        request.auth.uid == resource.data.agenteId
+      );
+      allow create: if isAuthenticated() && (userRole() == "admin" || userRole() == "agente");
+      allow update: if isAuthenticated() && (userRole() == "admin" || request.auth.uid == resource.data.agenteId);
+      allow delete: if isAuthenticated() && userRole() == "admin";
+    }
+
+    match /vuelos/{docId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && userRole() == "admin";
+    }
+
+    match /hoteles/{docId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && userRole() == "admin";
+    }
+
+    match /destinos/{docId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && userRole() == "admin";
+    }
+
+    match /paquetes/{docId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && userRole() == "admin";
+    }
+  }
+}

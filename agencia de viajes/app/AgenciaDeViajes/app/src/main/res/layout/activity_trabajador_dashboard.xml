@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo_viajes" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="32dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp">
+
+                <TextView
+                    android:id="@+id/tv_welcome_trabajador"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Panel de Gestión"
+                    android:textColor="#FFFFFF"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_welcome_trabajador"
+                    android:text="Asignación de Vuelos"
+                    android:textColor="#4CAF50"
+                    android:textSize="14sp"
+                    android:textStyle="italic" />
+
+                <ImageButton
+                    android:id="@+id/btn_logout_trabajador"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@android:drawable/ic_lock_power_off"
+                    app:tint="#FF5252" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. Seleccionar Petición Pendiente:"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:layout_gravity="start"
+                android:layout_marginBottom="6dp"
+                android:textStyle="bold"/>
+
+            <Spinner
+                android:id="@+id/spinner_trabajador_clientes"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@android:drawable/btn_dropdown"
+                android:layout_marginBottom="24dp"
+                android:padding="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2. Seleccionar Vuelo Oficial:"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:layout_gravity="start"
+                android:layout_marginBottom="6dp"
+                android:textStyle="bold"/>
+
+            <Spinner
+                android:id="@+id/spinner_trabajador_vuelos"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@android:drawable/btn_dropdown"
+                android:layout_marginBottom="32dp"
+                android:padding="12dp" />
+
+            <Button
+                android:id="@+id/btn_asignar_vuelo"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:backgroundTint="#FF9800"
+                android:text="Asignar Vuelo al Cliente"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

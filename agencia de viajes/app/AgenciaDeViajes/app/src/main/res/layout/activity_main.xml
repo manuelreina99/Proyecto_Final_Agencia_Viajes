@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo_viajes" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/tv_welcome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hola, Aventurero"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF" /> <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_welcome"
+                android:text="¿A dónde quieres ir hoy?"
+                android:textSize="16sp"
+                android:textColor="#E0E0E0" />
+
+                <ImageButton
+                    android:id="@+id/btn_logout"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@android:drawable/ic_lock_power_off"
+                    app:tint="#FF5252" />
+            </RelativeLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="false">
+
+                <androidx.cardview.widget.CardView
+                    style="@style/MyCardStyle"
+                    app:cardBackgroundColor="#CCFFFFFF"> <LinearLayout android:id="@+id/card_vuelo" style="@style/MyCardClickArea">
+                    <ImageView style="@style/MyCardIcon" android:src="@android:drawable/ic_menu_send" app:tint="#2196F3"/>
+                    <TextView style="@style/MyCardText" android:textColor="#1A237E" android:text="Vuelos" />
+                </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/MyCardStyle"
+                    app:cardBackgroundColor="#CCFFFFFF">
+                    <LinearLayout android:id="@+id/card_hotel" style="@style/MyCardClickArea">
+                        <ImageView style="@style/MyCardIcon" android:src="@android:drawable/ic_menu_myplaces" app:tint="#4CAF50"/>
+                        <TextView style="@style/MyCardText" android:textColor="#1B5E20" android:text="Hoteles" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/MyCardStyle"
+                    app:cardBackgroundColor="#CCFFFFFF">
+                    <LinearLayout android:id="@+id/card_reservas" style="@style/MyCardClickArea">
+                        <ImageView style="@style/MyCardIcon" android:src="@android:drawable/ic_menu_agenda" app:tint="#FF9800"/>
+                        <TextView style="@style/MyCardText" android:textColor="#BF360C" android:text="Mis Viajes" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/MyCardStyle"
+                    app:cardBackgroundColor="#CCFFFFFF">
+                    <LinearLayout android:id="@+id/cardOfertas" style="@style/MyCardClickArea">
+                        <ImageView style="@style/MyCardIcon" android:src="@android:drawable/btn_star_big_on" app:tint="#FBC02D"/>
+                        <TextView style="@style/MyCardText" android:textColor="#F57F17" android:text="Ofertas" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/MyCardStyle"
+                    app:cardBackgroundColor="#CCFFFFFF">
+                    <LinearLayout android:id="@+id/card_mapa" style="@style/MyCardClickArea">
+                        <ImageView style="@style/MyCardIcon" android:src="@android:drawable/ic_dialog_map" app:tint="#9C27B0"/>
+                        <TextView style="@style/MyCardText" android:textColor="#4A148C" android:text="Mapa" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/MyCardStyle"
+                    app:cardBackgroundColor="#CCFFFFFF">
+                    <LinearLayout android:id="@+id/card_perfil" style="@style/MyCardClickArea">
+                        <ImageView style="@style/MyCardIcon" android:src="@android:drawable/ic_menu_edit" app:tint="#607D8B"/>
+                        <TextView style="@style/MyCardText" android:textColor="#263238" android:text="Mi Perfil" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
